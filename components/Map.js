@@ -8,18 +8,17 @@ import { selectOrigin } from '../slices/navSlices';
 const Map = () => {
     const origin = useSelector(selectOrigin);
     return (
-        // <MapView
-        // style={tw`flex-1`}
-        // mapType="mutedStandard"
-        //     initialRegion={{
-        //         latitude: origin.location.lat,
-        //         longitude: origin.location.lng,
-        //         latitudeDelta: 0.005,
-        //         longitudeDelta: 0.005,
-        //     }}
-        // />
-        <>
-        </>
+        <MapView
+        style={tw`flex-1`}
+        mapType="mutedStandard"
+            initialRegion={{
+                latitude: origin.location.lat,
+                longitude: origin.location.lng,
+                latitudeDelta: 0.005,
+                longitudeDelta: 0.005,
+            }}
+        />
+        
     )
 }
 

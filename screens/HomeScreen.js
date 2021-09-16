@@ -12,7 +12,7 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={tw`bg-white h-full`}>
-      <View style={tw`p-5`}>
+      <View style={tw`p-7`}>
         <Image
           style={{
             width: 100,
@@ -33,7 +33,7 @@ const HomeScreen = () => {
               fontSize: 18,
             },
           }}
-          onPress={(data, details) => {
+          onPress={(data, details = null) => {
             dispatch(
               setOrigin({
                 location: details.geometry.location,

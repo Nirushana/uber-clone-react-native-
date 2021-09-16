@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import tw from 'react-native-tw';
+import tw from "tailwind-react-native-classnames";
 import Map from '../components/Map';
 
 

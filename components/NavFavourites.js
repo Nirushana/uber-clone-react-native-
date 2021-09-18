@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const data =[
     {
@@ -19,9 +19,15 @@ const data =[
 
 const NavFavourites = () => {
     return (
-        <View>
-            <Text></Text>
-        </View>
+        <FlatList
+            data={data}
+            keyExtractor={item => item.id}
+            renderItem={(item)=> (
+                <TouchableOpacity>
+                    <Text>yo</Text>
+                </TouchableOpacity>
+    )}
+        />
     )
 }
 

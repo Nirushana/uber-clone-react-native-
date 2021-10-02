@@ -41,7 +41,11 @@ const RideOptionsCard = () => {
       </View>
 
       <FlatList
-
+        data={data}
+        keyExtractor={item => item.id}
+        renderItem={(item) => (
+            
+        )}
       />
     </SafeAreaView>
   );

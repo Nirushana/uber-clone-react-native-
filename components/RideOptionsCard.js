@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, FlatList } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, FlatList, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import tw from "tailwind-react-native-classnames";
 import { Icon } from "react-native-elements";
@@ -43,8 +43,17 @@ const RideOptionsCard = () => {
       <FlatList
         data={data}
         keyExtractor={item => item.id}
-        renderItem={(item) => (
-            
+        renderItem={({item: { id, image, title, multiplier, }}) => (
+            <TouchableOpacity>
+              <Image
+                style={{
+                  width: 100,
+                  height: 100,
+                  resizeMode: "contain",
+                }}
+                source={{ uri: image }}
+              />
+            </TouchableOpacity>
         )}
       />
     </SafeAreaView>

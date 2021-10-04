@@ -13,6 +13,7 @@ import { Icon } from "react-native-elements";
 import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { selectTravelTimeInformation } from "../slices/navSlices";
+import Intl from "intl";
 
 
 const data = [
@@ -35,6 +36,8 @@ const data = [
     image: "https://links.papareact.com/7pf",
   },
 ];
+ 
+const SURGE_CHARFGE_RATE = 1.5;
 
 const RideOptionsCard = () => {
   const navigation = useNavigation();
@@ -72,9 +75,17 @@ const RideOptionsCard = () => {
             />
             <View style={tw`-ml-6`}>
               <Text style={tw`text-xl font-semibold`}>{title}</Text>
-              <Text></Text>
+              <Text>{travelTimeInformation?.duration.text}</Text>
             </View>
-            <Text style={tw`text-xl`}>LKR 120</Text>
+            <Text style={tw`text-xl`}>
+              {/* {new Intl.NumberFormat('en-gb', {
+                style: 'currency',
+                currency: 'GBP',
+              }).format(
+                (travelTimeInformation?.duration.value * SURGE_CHARFGE_RATE * multiplier)/ 100
+              )
+              } */}
+            </Text>
           </TouchableOpacity>
         )}
       />

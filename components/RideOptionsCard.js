@@ -37,7 +37,7 @@ const RideOptionsCard = () => {
   const navigation = useNavigation();
   const [selected, setSelected] = useState(null);
   return (
-    <SafeAreaView style={tw`bg-white flex-grow`}>
+    <SafeAreaView style={tw`bg-white flex-grow -mt-6`}>
       <View>
         <TouchableOpacity
           style={tw`absolute top-3 left-5 z-50 p-3 rounded-full`}
@@ -54,7 +54,7 @@ const RideOptionsCard = () => {
         renderItem={({ item: { id, image, title, multiplier }, item }) => (
           <TouchableOpacity
             onPress={() => setSelected(item)}
-            style={tw`flex-row justify-between items-center px-10 ${id === selected?.id && 'bg-gray-200'}`}
+            style={tw`flex-row justify-between items-center px-10 -mt-2 ${id === selected?.id && 'bg-gray-200'}`}
           >
             <Image
               style={{
@@ -72,6 +72,12 @@ const RideOptionsCard = () => {
           </TouchableOpacity>
         )}
       />
+
+      <View>
+        <TouchableOpacity disabled={!selected} style={tw`bg-black py-3 m-3 ${!selected && "bg-gray-300"}`}>
+          <Text style={tw`text-center text-white text-lg`}>Choose {selected?.title}</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };

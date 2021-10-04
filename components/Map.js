@@ -37,10 +37,10 @@ const Map = () => {
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           dispatch(setTravelTimeInformation(data.rows[0].elements[0]));
         });
     };
+    getTravelTime();
   }, [origin, destination, GOOGLE_MAPS_APIKEY]);
   return (
     <MapView
